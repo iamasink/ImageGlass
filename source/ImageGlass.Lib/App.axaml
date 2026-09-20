@@ -15,15 +15,6 @@
                 Header="About ImageGlass" />
             <NativeMenuItemSeparator />
             <NativeMenuItem
-                Click="AppMenuUpgradeLicense_Click"
-                CommandParameter="Menu_MnuUpgradeLicense"
-                Header="Upgrade to ImageGlass Pro" />
-            <NativeMenuItem
-                Click="AppMenuManageLicense_Click"
-                CommandParameter="Menu_MnuManageLicense"
-                Header="Manage Pro license" />
-            <NativeMenuItemSeparator />
-            <NativeMenuItem
                 Click="AppMenuSettings_Click"
                 CommandParameter="Menu_MnuSettings"
                 Header="Settings…" />

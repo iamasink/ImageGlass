@@ -109,21 +109,22 @@ public static partial class UsageStatsAgent
         var version = Core.BuildInfo?.Version;
         if (string.IsNullOrWhiteSpace(version)) version = UNKNOWN_VERSION;
 
-        var product = $"ImageGlass/{version}";
-        if (!withStats || IsDoNotTrackSet) return product;
+        // var product = $"ImageGlass/{version}";
+        // if (!withStats || IsDoNotTrackSet) return product;
 
-        try
-        {
-            var tokens = BuildTokens();
-            if (tokens.Count == 0) return product;
+        // try
+        // {
+        //     var tokens = BuildTokens();
+        //     if (tokens.Count == 0) return product;
 
-            return $"{product} ({string.Join("; ", tokens)})";
-        }
-        catch
-        {
-            // statistics must never be able to break the update check
-            return product;
-        }
+        //     return $"{product} ({string.Join("; ", tokens)})";
+        // }
+        // catch
+        // {
+        //     // statistics must never be able to break the update check
+        //     return product;
+        // }
+        return "nothing";
     }
 
 

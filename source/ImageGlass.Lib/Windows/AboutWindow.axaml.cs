@@ -193,7 +193,7 @@ public partial class AboutWindow : DialogWindow
         try
         {
             // the flying stars are a Pro flourish; Classic gets the floating logo alone
-            PART_HeroStars.EnableStars = Core.IsProEnabled;
+            PART_HeroStars.EnableStars = false;
             PART_HeroStars.BobTarget = PART_Logo;
             PART_Hero.PointerPressed += (_, _) => PlayHeroBurst();
         }
@@ -216,34 +216,7 @@ public partial class AboutWindow : DialogWindow
     /// </summary>
     private void SetupEditionChip()
     {
-        var isPro = Core.IsProEnabled;
-
-        // "Classic" and "Pro" are edition names, not translatable copy
-        PART_BtnEdition.Text = isPro ? "Pro" : "Classic";
-        PART_BtnEdition.Variant = isPro ? PhButtonVariant.Accent : PhButtonVariant.Outline;
-
-        // applying the variant clears both, so the pill shape has to be restored after it
-        PART_BtnEdition.Padding = new Thickness(14, 2);
-        PART_BtnEdition.Cursor = new Cursor(StandardCursorType.Hand);
-
-        // the accent variant fills the background but leaves the text colour alone
-        if (isPro)
-        {
-            PART_BtnEdition[!PhButton.ForegroundProperty] = Resx.CreateBinding(ResxId.AccentButtonForeground);
-        }
-
-        // owned by this dialog, not the main window, so it stacks on top of the modal About
-        PART_BtnEdition.Click += async (_, _) =>
-        {
-            try
-            {
-                _ = await new ManageLicenseWindow().ShowAsync(this);
-            }
-            catch
-            {
-                // an async void handler must never reach the unhandled-error dialog
-            }
-        };
+        PART_BtnEdition.IsVisible = false;
     }
 
 

@@ -593,7 +593,7 @@ public partial class App : Application
         Core.Update = new UpdateProvider();
 
         // silent check handles disabled/interval logic
-        _ = await Core.API.RunApiAsync(API.IG_CheckForUpdate, "false");
+        // _ = await Core.API.RunApiAsync(API.IG_CheckForUpdate, "false");
     }
 
 

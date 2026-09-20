@@ -107,9 +107,7 @@ public partial class SettingsWindowView : PhControl
 
         if (PART_License is not null)
         {
-            PART_License.Text = "✦ " + Core.Lang[Core.IsProEnabled
-                ? LangId.Menu_MnuManageLicense
-                : LangId.Menu_MnuUpgradeLicense];
+            PART_License.IsVisible = false;
         }
 
         // re-template the sidebar so the localized labels refresh
